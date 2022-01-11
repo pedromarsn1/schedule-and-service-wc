@@ -21,9 +21,9 @@ import java.util.Map;
 public class UniplusConnectedProductService {
     public void createProduct() throws SQLException {
         // Setup client
-        OAuthConfig config = new OAuthConfig("https://catalogo.rfldesigner.com.br",
-                "ck_9b2b1ea5e936c55b2b70c294acd47a17ab6ba502",
-                "cs_b231bf37934222f9bdbf1900aa9376fd7fe0cf4b");
+        OAuthConfig config = new OAuthConfig("https://originallinkhere.com.br",
+                "ck_*******************************", //insert your ck
+                "cs_*******************************"); //inset your cs
 
         WooCommerce wooCommerce;
         wooCommerce = new WooCommerceAPI(config, ApiVersionType.V3);
@@ -33,8 +33,8 @@ public class UniplusConnectedProductService {
         ResultSet rsClient = null;
         try {
             Class.forName("org.postgresql.Driver");
-            conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/unico-Ant",
-                    "postgres", "postgres");
+            conexao = DriverManager.getConnection("jdbc:postgresql://localhost:****/unico-Ant",
+                    "postgres", "postgres1234");
             rsClient = conexao.createStatement().executeQuery("SELECT * FROM PRODUTO WHERE id = 64");
             while (rsClient.next()) {
                 System.out.println("Preço 2: " + rsClient.getString("precopauta2"));
@@ -68,10 +68,10 @@ public class UniplusConnectedProductService {
     public void updateProductWoocommerce() throws SQLException {
 
         // Setup client
-        OAuthConfig config = new OAuthConfig("https://catalogo.rfldesigner.com.br",
-                "ck_9b2b1ea5e936c55b2b70c294acd47a17ab6ba502",
-                "cs_b231bf37934222f9bdbf1900aa9376fd7fe0cf4b");
-
+            // Setup client
+        OAuthConfig config = new OAuthConfig("https://originallinkhere.com.br",
+                "ck_*******************************", //insert your ck
+                "cs_*******************************"); //inset your cs
         WooCommerce wooCommerce;
         wooCommerce = new WooCommerceAPI(config, ApiVersionType.V3);
 
@@ -81,8 +81,8 @@ public class UniplusConnectedProductService {
         ResultSet rsClient = null;
         try {
             Class.forName("org.postgresql.Driver");
-            conexaoUpdate = DriverManager.getConnection("jdbc:postgresql://localhost:5432/unico-Ant",
-                    "postgres", "postgres");
+            conexaoUpdate = DriverManager.getConnection("jdbc:postgresql://localhost:****/unico-Ant",
+                    "postgres", "postgres1234");
             rsClient = conexaoUpdate.createStatement().executeQuery("SELECT * FROM PRODUTO WHERE id = 59");
             while (rsClient.next()) {
                 String priceData = rsClient.getString("precopauta2");
@@ -112,10 +112,11 @@ public class UniplusConnectedProductService {
     }
 
     public void deleteProduct() throws SQLException {
-        // Setup client
-        OAuthConfig config = new OAuthConfig("https://catalogo.rfldesigner.com.br",
-                "ck_9b2b1ea5e936c55b2b70c294acd47a17ab6ba502",
-                "cs_b231bf37934222f9bdbf1900aa9376fd7fe0cf4b");
+      
+          // Setup client
+        OAuthConfig config = new OAuthConfig("https://originallinkhere.com.br",
+                "ck_*******************************", //insert your ck
+                "cs_*******************************"); //inset your cs
 
         WooCommerce wooCommerce;
         wooCommerce = new WooCommerceAPI(config, ApiVersionType.V3);
@@ -125,8 +126,8 @@ public class UniplusConnectedProductService {
         ResultSet rsClient = null;
         try {
             Class.forName("org.postgresql.Driver");
-            conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/unico-Ant",
-                    "postgres", "postgres");
+            conexao = DriverManager.getConnection("jdbc:postgresql://localhost:****/unico-Ant",
+                    "postgres", "postgres1234");
             rsClient = conexao.createStatement().executeQuery("DELETE FROM PRODUTO WHERE id = 168");
             while (rsClient.next()) {
                 Map product = wooCommerce.delete(EndpointBaseType.PRODUCTS.getValue(), 3382);
